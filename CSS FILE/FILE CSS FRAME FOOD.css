@@ -1,0 +1,1308 @@
+/* --- RESET DASAR & PEMBAGIAN LAYOUT --- */
+TAMPILAN HOME * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-y: auto;
+    /* Mengizinkan scroll ke bawah */
+    -ms-overflow-style: none;
+    /* Menyembunyikan garis scroll di IE/Edge */
+    scrollbar-width: none;
+    /* Menyembunyikan garis scroll di Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    /* Menyembunyikan garis scroll di Chrome/Safari */
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Biar scrollbar bawaan browser gak double */
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+main {
+    flex: 1;
+}
+
+
+
+.navigasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 12vh;
+    /* Navbar dapet porsi 12% tinggi layar */
+    background-color: black;
+    /* 🌟 SEKARANG TRANSPARAN: Hitam semi-transparan 75% */
+    flex-shrink: 0;
+    /* Wajib! Biar navbar gak ikut menyusut/kejepit pas konten melar */
+    position: sticky;
+    /* Menjaga posisi layer aman */
+    z-index: 10;
+    /* Biar tetep melayang di atas konten saat di-scroll */
+    top: 0%;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+
+.area-konten {
+    flex-grow: 1;
+    /* Mengambil seluruh sisa layar di bawah navbar (88vh) */
+    display: flex;
+    flex-direction: column;
+    /* 🌟 KUNCI SCROLL: Mengaktifkan scroll vertikal di area konten */
+    height: 88vh;
+    /* Memaksa area ini mengisi penuh sisa tinggi layar */
+}
+
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: #ff9900;
+}
+
+/* --- 2. KOTAK HERO --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../GAMBAR/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    /* Gambar tetep konsisten setinggi 70% layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    /* Biar gambar gak ngecil saat di-scroll */
+}
+
+.hero-content {
+    color: #ffffff;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.klik-pesan {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+/* --- 3. AREA TENTANG KAMI --- */
+.about-section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    /* 🌟 SEKARANG TRANSPARAN: Putih semi-transparan 85% */
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+    /* Membuat area tentang kami mengambil space sebelum footer */
+}
+
+.about-container {
+    text-align: center;
+    color: #ff9900;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 50px;
+}
+
+.tentang p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- CONTAINER LUAR --- */
+.PORTO-KAMI {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #ff9900;
+    text-align: center;
+}
+
+.galeri-container {
+    width: 100%;
+    max-width: 1200px;
+    /* Batas lebar maksimal galeri di monitor */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- KUNCI UTAMA SCROLL HORIZONTAL --- */
+.galeri-scroll {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- DESAIN GAMBAR --- */
+.galeri-img {
+    flex: 0 0 300px;
+    /* KUNCI: Gambar dipaksa lebar 300px (tidak ngecil) */
+    height: 200px;
+    /* Tinggi gambar */
+    object-fit: cover;
+    /* Biar gambar otomatis pas tanpa ketarik/penyet */
+    border-radius: 8px;
+    /* Bikin ujung gambar agak melengkung halus */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    object-position: bottom;
+}
+
+/* Efek pas gambar ditunjuk kursor */
+.galeri-img:hover {
+    transform: scale(1.03);
+    /* Gambar nge-zoom dikit */
+}
+
+/* --- MEMPERCANTIK SCROLLBAR GALERI --- */
+.galeri-scroll::-webkit-scrollbar {
+    height: 6px;
+    /* Tebal scrollbar bawah */
+}
+
+.galeri-scroll::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    /* Warna scrollbar */
+    border-radius: 10px;
+}
+
+/* --- TOMBOL BAWAH --- */
+.btn-lengkap {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+.btn-lengkap:hover {
+    color: #ff0000;
+}
+
+/* --- 4. DESAIN FOOTER (NYENDER DI PALING BAWAH KONTEN) --- */
+.footer-bawah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* Tinggi footer 10% layar */
+    background-color: #111111;
+    color: #666666;
+    font-size: 13px;
+    width: 100%;
+    flex-shrink: 0;
+    /* Mengunci tinggi footer agar tidak gepeng di bawah */
+}
+
+/* BAGIAN ORDERS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-y: auto;
+    /* Mengizinkan scroll ke bawah */
+    -ms-overflow-style: none;
+    /* Menyembunyikan garis scroll di IE/Edge */
+    scrollbar-width: none;
+    /* Menyembunyikan garis scroll di Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    /* Menyembunyikan garis scroll di Chrome/Safari */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Menyusun header dan konten ke bawah secara fleksibel */
+    height: 100vh;
+    /* Biar scrollbar bawaan browser gak double */
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+/* ========================================
+   LANGKAH PENGGUNAAN
+======================================== */
+
+.steps-section {
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.step-card {
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-card h3 {
+    color: #ff8c00;
+    margin-bottom: 10px;
+}
+
+.navigasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 12vh;
+    /* Navbar dapet porsi 12% tinggi layar */
+    background-color: black;
+
+    flex-shrink: 0;
+
+    position: sticky;
+    /* Menjaga posisi layer aman */
+    z-index: 10;
+    /* Biar tetep melayang di atas konten saat di-scroll */
+    top: 0%;
+}
+
+
+.area-konten {
+    flex-grow: 1;
+    /* Mengambil seluruh sisa layar di bawah navbar (88vh) */
+    display: flex;
+    flex-direction: column;
+
+    height: 88vh;
+
+}
+
+
+.logo {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    cursor: default;
+}
+
+.logo .aksen-warna {
+    color: #ff9900;
+    font-weight: 800;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+}
+
+.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    color: #ff9900;
+}
+
+.area-konten-orders {
+    align-items: center;
+
+}
+
+.video-section{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.video-wrapper{
+    max-width:900px;
+    margin:auto;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+/* ========================================
+   ORDERS PAGE - FOOD FRAME
+======================================== */
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+body {
+    background: #f8f8f8;
+}
+
+.orders-hero,
+.package-section,
+.order-section,
+.brief-section,
+.summary-section,
+.payment-section {
+    padding: 80px 8%;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.orders-hero {
+
+    min-height: 600px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .65),
+            rgba(0, 0, 0, .65)),
+        url("../GAMBAR/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.orders-title {
+    font-size: 58px;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.orders-description {
+    color: #f5f5f5;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   SECTION TITLE
+======================================== */
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #222;
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   PACKAGE
+======================================== */
+
+.package-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+    transition: .3s;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+}
+
+.package-card h3 {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.package-card ul {
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.package-card li {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.package-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 25px;
+}
+
+.featured {
+    border: 2px solid #ff8c00;
+    transform: scale(1.03);
+}
+
+.package-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff8c00;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: #ff8c00;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #ff9f2f;
+}
+
+/* ========================================
+   FORM DATA BRAND
+======================================== */
+
+.order-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #222;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+    font-size: 15px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff8c00;
+}
+
+.full-width {
+    grid-column: 1/3;
+}
+
+/* ========================================
+   CREATIVE BRIEF
+======================================== */
+
+.brief-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+}
+
+.brief-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 25px;
+    background: #ff8c00;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-download:hover {
+    background: #ff9f2f;
+}
+
+.upload-box {
+    margin-top: 40px;
+    border: 2px dashed #ff8c00;
+    padding: 50px;
+    border-radius: 20px;
+    background: #fffaf3;
+}
+
+.upload-box h3 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.upload-box p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.upload-box input {
+    margin-top: 10px;
+}
+
+/* ========================================
+   SUMMARY
+======================================== */
+
+.summary-card {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item span {
+    color: #666;
+}
+
+.summary-item strong {
+    color: #ff8c00;
+}
+
+/* ========================================
+   PAYMENT
+======================================== */
+
+.payment-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.payment-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+}
+
+.payment-card input {
+    margin-top: 5px;
+}
+
+.payment-card h3 {
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.payment-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   ACTION BUTTON
+======================================== */
+
+.action-section {
+    text-align: center;
+    padding: 20px 8% 100px;
+}
+
+.btn-payment {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-payment:hover {
+    background: #ff9f2f;
+    transform: translateY(-3px);
+}
+
+.selected-package {
+    border: 3px solid #ff7a00 !important;
+    transform: scale(1.03);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:768px) {
+
+    .orders-title {
+        font-size: 38px;
+    }
+
+    .package-container {
+        grid-template-columns: 1fr;
+    }
+
+    .order-form {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .brief-card {
+        padding: 25px;
+    }
+
+    .upload-box {
+        padding: 30px;
+    }
+
+}
+
+/* =========================
+   STATUS ORDERS
+========================= */
+
+.status-orders-page {
+    width: 100%;
+    padding: 40px 8%;
+    background: #f5f5f5;
+}
+
+.status-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.status-hero h1 {
+    color: #ff8c00;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.status-hero p {
+    color: #555;
+}
+
+.search-box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    flex: 1;
+    height: 55px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.search-box button {
+    width: 220px;
+    border: none;
+    background: #ff8c00;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #ff8c00;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.summary-item {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.summary-item span {
+    color: #777;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #ddd;
+}
+
+.tracker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background: #ddd;
+}
+
+.active {
+    background: #ff8c00 !important;
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background: #ddd;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #ff8c00;
+    transition: .5s;
+}
+
+.progress-text {
+    margin-top: 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.photo-box {
+    height: 180px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#downloadBtn {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    background: #bbb;
+    color: white;
+    cursor: not-allowed;
+}
+
+.active-step {
+    background: #ff7a00;
+    color: white;
+    border-color: #ff7a00;
+}
+
+.timeline-item {
+    padding: 15px;
+    border-left: 3px solid #ff7a00;
+}
+
+@media(max-width:768px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+        height: 55px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tracker {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .line {
+        width: 4px;
+        height: 40px;
+    }
+}
+
+/* ========================================
+   DAFTAR TRANSAKSI
+======================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.transaction-table th {
+    background: #ff7a00;
+    color: white;
+}
+
+.transaction-table tr:hover {
+    background: #f8f8f8;
+}
+
+/* ===================================
+   ACCOUNT PAGE
+=================================== */
+
+.account-page {
+    width: 100%;
+    padding: 40px;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+
+/* ===================================
+   HEADER ACCOUNT
+=================================== */
+
+.account-header {
+    width: 100%;
+    background: #111111;
+    padding: 60px 40px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.account-header h1 {
+    color: #ff8c00;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.account-header p {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* ===================================
+   CARD UMUM
+=================================== */
+
+.account-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.section-title {
+    color: #ff8c00;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* ===================================
+   PROFILE CARD
+=================================== */
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-image {
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff8c00;
+}
+
+.profile-card h2 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.account-role {
+    display: block;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.btn-edit {
+    background: #ff8c00;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-edit:hover {
+    background: #e67600;
+}
+
+/* ===================================
+   INFORMASI AKUN
+=================================== */
+
+.info-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.info-item {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.info-item label {
+    display: block;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.info-item p {
+    color: #222;
+    font-size: 16px;
+}
+
+/* ===================================
+   KEAMANAN AKUN
+=================================== */
+
+.security-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.security-box label {
+    display: block;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.security-box p {
+    color: #222;
+}
+
+.btn-password {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-password:hover {
+    background: #e67600;
+}
+
+/* ===================================
+   LOGOUT
+=================================== */
+
+.logout-section {
+    width: 100%;
+}
+
+.btn-logout {
+    width: 100%;
+    height: 60px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: #b52b38;
+}
+
+/* ===================================
+   RESPONSIVE TABLET
+=================================== */
+
+@media (max-width:992px) {
+
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE MOBILE
+=================================== */
+
+@media (max-width:768px) {
+
+    .account-page {
+        padding: 20px;
+    }
+
+    .account-header {
+        padding: 40px 20px;
+    }
+
+    .account-header h1 {
+        font-size: 36px;
+    }
+
+    .account-card {
+        padding: 25px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .security-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-password {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer-bawah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* Tinggi footer 10% layar */
+    background-color: #111111;
+    color: #666666;
+    font-size: 13px;
+    width: 100%;
+    flex-shrink: 0;
+
+
+}

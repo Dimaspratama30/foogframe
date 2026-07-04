@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Food Frame</title>
+
+    <link rel="stylesheet" href="../CSS FILE/FILE CSS FRAME FOOD.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="navigasi-header">
+
+       <div class="logo">
+    <img src="../GAMBAR/logo.png" alt="Food Frame Logo">
+</div>
+
+        <nav class="menu">
+    <ul>
+        <li><a href="./Landing page dan Home.html">HOME</a></li>
+        <li><a href="./ORDERS.html">ORDERS</a></li>
+        <li><a href="./STATUS ORDERS.html">STATUS ORDERS</a></li>
+        <li><a href="./daftar transaksi.html">TRANSAKSI</a></li>
+        <li><a href="./account.html">ACCOUNT</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="orders-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                FOOD PHOTOGRAPHY SERVICE
+            </span>
+
+            <h1 class="orders-title">
+                Tingkatkan Penjualan Dengan Foto Produk Profesional
+            </h1>
+
+            <p class="orders-description">
+                Food Frame membantu brand makanan dan minuman mendapatkan visual berkualitas tinggi untuk kebutuhan
+                promosi, marketplace, katalog, dan media sosial.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PACKAGE -->
+
+    <section class="package-section">
+
+        <h2 class="section-title">
+            Pilih Paket
+        </h2>
+
+        <div class="package-container">
+
+            <!-- BASIC -->
+
+            <div class="package-card">
+
+                <h3>Basic</h3>
+
+                <ul>
+                    <li>1 - 5 Produk</li>
+                    <li>5 Foto Final</li>
+                    <li>1x Revisi Minor</li>
+                </ul>
+
+                <div class="package-price">
+                    Rp150.000
+                </div>
+
+                <button type="button" class="btn-primary paket-btn" data-paket="Basic" data-harga="150000">
+
+                    Pilih Paket
+
+                </button>
+
+            </div>
+
+            <!-- STANDARD -->
+
+            <div class="package-card featured">
+
+                <span class="package-badge">
+                    MOST POPULAR
+                </span>
+
+                <h3>Standard</h3>
+
+                <ul>
+                    <li>6 - 15 Produk</li>
+                    <li>15 Foto Final</li>
+                    <li>1x Revisi Minor</li>
+                </ul>
+
+                <div class="package-price">
+                    Rp350.000
+                </div>
+
+                <button type="button" class="btn-primary paket-btn" data-paket="Standard" data-harga="350000">
+
+                    Pilih Paket
+
+                </button>
+
+            </div>
+
+            <!-- PREMIUM -->
+
+            <div class="package-card">
+
+                <h3>Premium</h3>
+
+                <ul>
+                    <li>16 - 30 Produk</li>
+                    <li>40 Foto Final</li>
+                    <li>2x Revisi Minor</li>
+                </ul>
+
+                <div class="package-price">
+                    Rp750.000
+                </div>
+
+                <button type="button" class="btn-primary paket-btn" data-paket="Premium" data-harga="750000">
+
+                    Pilih Paket
+
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DATA BRAND -->
+
+    <section class="order-section">
+
+        <h2 class="section-title">
+            Data Brand
+        </h2>
+
+        <form class="order-form" id="orderForm">
+
+            <div class="form-group">
+                <label>Nama Brand</label>
+                <input type="text" id="brandName" placeholder="Masukkan nama brand">
+            </div>
+
+            <div class="form-group">
+                <label>Contact Person</label>
+                <input type="text" id="contactPerson" placeholder="Nama PIC">
+            </div>
+
+            <div class="form-group">
+                <label>No WhatsApp</label>
+                <input type="text" id="whatsapp" placeholder="08xxxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="email@brand.com">
+            </div>
+
+            <div class="form-group full-width">
+                <label>Jumlah Produk</label>
+                <input type="number" id="productCount" placeholder="Jumlah produk yang akan difoto">
+            </div>
+
+        </form>
+    </section>
+
+    <!-- CREATIVE BRIEF -->
+
+    <section class="brief-section">
+
+        <h2 class="section-title">
+            Creative Brief
+        </h2>
+
+        <div class="brief-card">
+
+            <p>
+                Download template brief terlebih dahulu, isi sesuai kebutuhan project Anda, lalu upload kembali file PDF
+                yang sudah diisi.
+            </p>
+
+            <a href="../TEMPLATE BRIEF.pdf" class="btn-download" download>
+                Download Template Brief
+            </a>
+
+            <div class="upload-box">
+
+                <h3>Upload Creative Brief</h3>
+
+                <p>
+                    Drag & Drop PDF di sini atau klik untuk memilih file.
+                </p>
+
+                <input type="file" accept=".pdf">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RINGKASAN -->
+
+    <section class="summary-section">
+
+        <h2 class="section-title">
+            Ringkasan Pesanan
+        </h2>
+
+        <div class="summary-card">
+
+            <div class="summary-item">
+                <span>Paket</span>
+                <strong id="summaryPackage">
+                    Belum Dipilih
+                </strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Jumlah Produk</span>
+                <strong id="summaryProduct">
+                    0 Produk
+                </strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Total Harga</span>
+                <strong id="summaryPrice">
+                    Rp0
+                </strong>
+            </div>
+    </section>
+
+    <!-- METODE PEMBAYARAN -->
+
+    <section class="payment-section">
+
+        <h2 class="section-title">
+            Metode Pembayaran
+        </h2>
+
+        <div class="payment-container">
+
+            <label class="payment-card">
+
+                <input type="radio" name="payment">
+
+                <div>
+                    <h3>QRIS</h3>
+                    <p>Scan QR menggunakan aplikasi pembayaran.</p>
+                </div>
+
+            </label>
+
+            <label class="payment-card">
+
+                <input type="radio" name="payment">
+
+                <div>
+                    <h3>Transfer Bank</h3>
+                    <p>BCA, BRI, Mandiri dan bank lainnya.</p>
+                </div>
+
+            </label>
+
+            <label class="payment-card">
+
+                <input type="radio" name="payment">
+
+                <div>
+                    <h3>E-Wallet</h3>
+                    <p>DANA, OVO, GoPay, ShopeePay.</p>
+                </div>
+
+            </label>
+
+        </div>
+
+    </section>
+
+    <!-- ACTION -->
+
+    <section class="action-section">
+
+        <button type="button" id="submitOrder" class="btn-payment">
+
+            Konfirmasi & Buat Pesanan
+
+        </button>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer-bawah">
+        <p>&copy; 2026 Food Frame Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../JAVA SCRPT/orders.js"></script>
+
+</body>
+
+</html>

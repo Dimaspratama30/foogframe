@@ -1,0 +1,61 @@
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+    document.getElementById("orderId").innerHTML =
+        "ORD-2026-001";
+
+    document.getElementById("brandName").innerHTML =
+        "Kopi Senja";
+
+    document.getElementById("packageName").innerHTML =
+        "Standard";
+
+    document.getElementById("statusBadge").innerHTML =
+        "Editing";
+
+    document.getElementById("statusBadge").style.background =
+        "#ff8c00";
+
+    document.getElementById("statusBadge").style.color =
+        "#fff";
+
+    document.getElementById("progressFill").style.width =
+        "80%";
+
+    document.getElementById("progressText").innerHTML =
+        "80%";
+
+    document.getElementById("timelineContent").innerHTML = `
+        <ul>
+            <li>14 Juni - Order Dibuat</li>
+            <li>15 Juni - Brief Diterima</li>
+            <li>16 Juni - Pembayaran Diterima</li>
+            <li>17 Juni - Shooting Selesai</li>
+            <li>18 Juni - Editing</li>
+        </ul>
+    `;
+
+    document.getElementById("briefContent").innerHTML =
+        "brief_kopi_senja.pdf";
+
+    document.getElementById("galleryContent").innerHTML = `
+        <div class="photo-box">Foto 1</div>
+        <div class="photo-box">Foto 2</div>
+        <div class="photo-box">Foto 3</div>
+        <div class="photo-box">Foto 4</div>
+    `;
+
+    document.getElementById("downloadBtn").disabled = false;
+    document.getElementById("downloadBtn").style.background = "#ff8c00";
+    document.getElementById("downloadBtn").style.cursor = "pointer";
+
+    document.getElementById("s1").classList.add("active");
+    document.getElementById("s2").classList.add("active");
+    document.getElementById("s3").classList.add("active");
+    document.getElementById("s4").classList.add("active");
+    document.getElementById("s5").classList.add("active");
+
+    document.getElementById("l1").classList.add("active");
+    document.getElementById("l2").classList.add("active");
+    document.getElementById("l3").classList.add("active");
+    document.getElementById("l4").classList.add("active");
+});
